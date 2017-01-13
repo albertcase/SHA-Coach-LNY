@@ -207,7 +207,7 @@
 
         /* 事件函数 */
         self.videoFun = function(){
-            var lnyvideo = $("#lnyvideo");
+            var lnyvideo = document.getElementById("lnyvideo");
                 lnyvideo.play(); 
                 lnyvideo.style.height = "100%";
 
