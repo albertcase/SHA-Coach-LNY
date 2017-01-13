@@ -24,6 +24,15 @@
 </head>
 <body>
 
+
+<!-- 横屏代码 -->
+<div id="orientLayer" class="mod-orient-layer">
+    <div class="mod-orient-layer__content">
+        <i class="icon mod-orient-layer__icon-orient"></i>
+        <div class="mod-orient-layer__desc">请在解锁模式下，横屏体验游戏</div>
+    </div>
+</div>
+
 <div id="dreambox">
 
     <!-- games -->
@@ -228,13 +237,6 @@
 
 </script>
 
-<!-- 横屏代码 -->
-<div id="orientLayer" class="mod-orient-layer">
-    <div class="mod-orient-layer__content">
-        <i class="icon mod-orient-layer__icon-orient"></i>
-        <div class="mod-orient-layer__desc">请在解锁模式下，横屏体验游戏</div>
-    </div>
-</div>
 
 </body>
 </html>
