@@ -209,8 +209,8 @@
         /* 事件函数 */
         self.videoFun = function(n){
             var v = document.getElementById(n);
-            v.play(); 
-            v.style.height = "100%";
+                v.play(); 
+                v.style.height = "100%";
 
 
             self.eventTester(v, "ended", function(){
