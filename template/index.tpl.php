@@ -72,7 +72,7 @@
 
     <!-- 活动视频 -->
     <div class="section" id="video">
-        <video width="100%" height="0" id="lnyvideo" playsinline webkit-playsinline src="" sourcesrc="/dist/asset/media/lny.mp4" poster="/dist/asset/media/poster.jpg"></video>
+        <video width="100%" height="0" id="lnyvideo" playsinline webkit-playsinline src="/dist/asset/media/lny.mp4" poster="/dist/asset/media/poster.jpg"></video>
     </div>
 
 
@@ -161,7 +161,7 @@
 
         "/dist/asset/media/poster.jpg",
         "/dist/asset/media/lny.mp4",
-    ], lnyvideo = document.getElementById("lnyvideo");;
+    ], lnyvideo = document.getElementById("lnyvideo");
 
     if(timesObj["_ts"] != null){
         allimg = [
@@ -171,6 +171,8 @@
             "/dist/asset/img/p4.jpg",
         ]
     };
+
+    console.log(allimg);
 
     pfun.loadingFnDoing(allimg, function(){
         $(".loading").css({"visibility": "hidden"});
