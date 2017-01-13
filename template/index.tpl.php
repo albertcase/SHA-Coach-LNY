@@ -129,6 +129,11 @@
 <script type="text/javascript" src="/dist/asset/js/public.min.js"></script>
 
 <script type="text/javascript">
+    var pType = pfun.getQueryString("delCookie");
+    if(pType){
+        pfun.delCookie("times")
+    }
+
     var timesObj = {
         "_ts": pfun.getCookie("times"),        // 后端cookie设置 1/null   游戏失败   // 判断跳转成功或失败
         //"_sts": pfun.getCookie("shareTimes")   // 前端cookie设置 1/null   null可再次玩游戏
@@ -287,7 +292,7 @@
 // pfun.delCookie("coachIsShare");
 // console.log(pfun.getCookie("coachIsShare") + "del");
 
-alert(timesObj["_ts"]);
+console.log(timesObj["_ts"]);
 
 
 </script>
