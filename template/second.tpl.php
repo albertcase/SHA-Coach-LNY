@@ -83,7 +83,7 @@
         _lny.init();
     })
 
-    
+
     function lnyFun(){
         var self = this;
 
@@ -128,16 +128,17 @@
                 self.defaultSet["r"] = requestAnimationFrame(self.countdown);
             }else{
 
-                pfun.setCookie("shareTimes", "1", "360");
-
                 // 倒计时结束
                 if(getScore >= 5){
-                    if(attention){
-                        location.href = "/third?type=yattention";
-                    }else{
-                        location.href = "/third?type=nattention";
-                    }  
+                    self.submitResult("1", function(){
+                        if(attention){
+                            location.href = "/third?type=yattention";
+                        }else{
+                            location.href = "/third?type=nattention";
+                        }  
+                    });
                 }else{
+                    pfun.setCookie("times", "0", "360");   
                     location.href = "/third?type=failure";
                 }
                 
@@ -168,6 +169,10 @@
             $(n).append(gamesCodeHTML);
         }
 
+        self.submitResult = function(score, submitCallback){
+            pfun.ajaxFun("POST", "/api/submit", {"status": score}, "json", submitCallback);
+        }
+
 
     }
 
@@ -193,11 +198,13 @@
             getScore = lnyCount;
 
             if(getScore >= 5){
-                if(attention){
-                    location.href = "/third?type=yattention";
-                }else{
-                    location.href = "/third?type=nattention";
-                }
+                _lny.submitResult("1", function(){
+                    if(attention){
+                        location.href = "/third?type=yattention";
+                    }else{
+                        location.href = "/third?type=nattention";
+                    }  
+                });
             }
         }else{
             m.addClass("pulse animated").addClass("active").one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){

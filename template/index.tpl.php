@@ -123,7 +123,7 @@
 <script type="text/javascript">
     var timesObj = {
         "_ts": pfun.getCookie("times"),        // 后端cookie设置 1/null   游戏失败   // 判断跳转成功或失败
-        "_sts": pfun.getCookie("shareTimes")   // 前端cookie设置 1/null   null可再次玩游戏
+        //"_sts": pfun.getCookie("shareTimes")   // 前端cookie设置 1/null   null可再次玩游戏
     }
 
     var allimg = [
@@ -235,11 +235,11 @@
 
 
     $(".challenge_btn").on("click", function(){
-        if(timesObj["_ts"] == null || timesObj["_sts"] == null){
+        if(timesObj["_ts"] == null){                              // 第一次进入游戏  /  分享之后得到次数
             _lny.sectionChange("video");
-        }else if(timesObj["_ts"] == "0"){
+        }else if(timesObj["_ts"] == "0"){                         //游戏失败
             location.href = "third.html?type=failure";
-        }else{
+        }else{                                                    // 游戏完成
             location.href = "third.html?type=yattention";
         };
     })
@@ -267,7 +267,7 @@
 // pfun.delCookie("coachIsShare");
 // console.log(pfun.getCookie("coachIsShare") + "del");
 
-
+console.log(timesObj["_ts"]);
 
 
 </script>
