@@ -19,7 +19,7 @@
     <meta name="Description" content="...">
     <link rel="stylesheet" type="text/css" href="/dist/asset/css/all.min.css">
     <script type="text/javascript" src="/dist/asset/js/all.min.js"></script>
-    <script type="text/javascript" src="http://coach.samesamechina.com/api/v1/js/9a6edd5b-c1bc-4d6a-9dd4-b03defc4ff46/wechat?debug=1"></script>
+    <script type="text/javascript" src="http://coach.samesamechina.com/api/v1/js/9a6edd5b-c1bc-4d6a-9dd4-b03defc4ff46/wechat"></script>
     <style type="text/css">
         
         .IIV::-webkit-media-controls-play-button,
@@ -150,6 +150,9 @@
         "/dist/asset/img/p2.jpg",
         "/dist/asset/img/p3.jpg",
         "/dist/asset/img/p4.jpg",
+
+        "/dist/asset/media/poster.jpg",
+        "/dist/asset/media/lny.mp4",
     ];
 
     pfun.loadingFnDoing(allimg, function(){
@@ -181,17 +184,13 @@
 
         // 页面切换
         self.sectionChange = function(n){        // section 页面切换
-            $(".section").removeClass("show transition");
-            $("#" + n).addClass('show transition');
-            $(".gamesInfo").css({"bottom": "-30%"});
 
             if(n == "video"){
                 self.videoFun();
-            }else if(n == "games"){
-                $(".gamesInfo").css({"bottom": 0});
-            }else{
-
             }
+
+            $(".section").removeClass("show transition");
+            $("#" + n).addClass('show transition');  
         }
 
         // 弹层
