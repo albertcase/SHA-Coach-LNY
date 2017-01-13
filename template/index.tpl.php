@@ -158,7 +158,6 @@
         _lny.init();
     })
 
-    var lnyvideo = document.getElementById("lnyvideo");
     function lnyFun(){
         var self = this;
 
@@ -208,7 +207,7 @@
 
         /* 事件函数 */
         self.videoFun = function(){
-
+            var lnyvideo = document.getElementById("lnyvideo");
                 lnyvideo.play(); 
                 lnyvideo.style.height = "100%";
 
