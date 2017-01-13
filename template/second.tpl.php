@@ -114,7 +114,6 @@
                 }
                 self.defaultSet["r"] = requestAnimationFrame(self.countdown);
             }else{
-                alert(6);
                 // 倒计时结束
                 if(getScore >= 5){
                     self.submitResult("1", function(){
