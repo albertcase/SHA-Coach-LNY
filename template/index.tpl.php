@@ -19,7 +19,7 @@
     <meta name="Description" content="...">
     <link rel="stylesheet" type="text/css" href="/dist/asset/css/all.min.css">
     <script type="text/javascript" src="/dist/asset/js/all.min.js"></script>
-    <script type="text/javascript" src="http://coach.samesamechina.com/api/v1/js/9a6edd5b-c1bc-4d6a-9dd4-b03defc4ff46/wechat"></script>
+    <script type="text/javascript" src="http://coach.samesamechina.com/api/v1/js/9a6edd5b-c1bc-4d6a-9dd4-b03defc4ff46/wechat?debug=1"></script>
     <style type="text/css">
         
         .IIV::-webkit-media-controls-play-button,
