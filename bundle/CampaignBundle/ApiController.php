@@ -65,4 +65,18 @@ class ApiController extends Controller {
 		}
     }
 
+    public function statusAction() {
+
+    	global $user;
+
+    	$wechatAPI = new \Lib\CurioWechatAPI();
+		$issubscribe = $wechatAPI->isSubscribed($user->openid);
+
+		if ($issubscribe) {
+			$this->statusPrint('1', '已关注');
+		} else {
+			$this->statusPrint('0', '未关注');
+		}
+    }
+
 }
