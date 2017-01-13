@@ -110,7 +110,7 @@
                 // 倒计时结束
                 if(getScore >= 5){
                     self.submitResult("1", function(){
-                        pfun.delCookie("times");
+                        pfun.setCookie("times", "1", "360");   
                         setTimeout(function(){
                             if(attention){
                                 location.href = "/third?type=yattention";
@@ -190,7 +190,7 @@
 
             if(getScore >= 5){
                 _lny.submitResult("1", function(){
-                    pfun.delCookie("times");
+                    pfun.setCookie("times", "1", "360");  
                     setTimeout(function(){
                         if(attention){
                             location.href = "/third?type=yattention";
