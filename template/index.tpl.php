@@ -155,6 +155,15 @@
         "/dist/asset/media/lny.mp4",
     ];
 
+    if(timesObj["_ts"] != null){
+        allimg = [
+            "/dist/asset/img/logo.png",
+            "/dist/asset/img/p1.jpg",
+            "/dist/asset/img/p3.jpg",
+            "/dist/asset/img/p4.jpg",
+        ]
+    };
+
     pfun.loadingFnDoing(allimg, function(){
         $(".loading").css({"visibility": "hidden"});
         _lny.init();
