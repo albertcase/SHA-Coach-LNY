@@ -70,6 +70,7 @@
         pfun.init();
     })
 
+    self.gamesHTML(".gamesScenes"); // 填充元素
 
     function lnyFun(){
         var self = this;
@@ -84,7 +85,7 @@
 
         /* 公共函数 即 默认执行 */
         self.init = function(){   // 初始化执行函数
-            self.gamesHTML(".gamesScenes"); // 填充元素
+            
             setTimeout(function(){
                 self.countdown(); // 开始倒计时
             }, 300)
@@ -117,7 +118,7 @@
                 // 倒计时结束
                 if(getScore >= 5){
                     self.submitResult("1", function(){
-                        self.delCookie("times");
+                        pfun.delCookie("times");
                         setTimeout(function(){
                             if(attention){
                                 location.href = "/third?type=yattention";
@@ -148,11 +149,11 @@
             var gamesCodeHTML =  $.map(animal, function(a, b){
                 //console.log(a);
                 //console.log(b);
-                if(a.angle){
-                    self.defaultSet["ts"] = a.angle
-                }else{
-                    self.defaultSet["ts"] = "0deg";
-                }
+                // if(a.angle){
+                //     self.defaultSet["ts"] = a.angle
+                // }else{
+                //     self.defaultSet["ts"] = "0deg";
+                // }
                 return '<div class="animal '+ a.size +'" data-num="'+ parseInt(b+1, 10) +'" data-type="'+ self.defaultSet["ec"][b] +'" style="left: '+a.pos[0]+'%; top: '+a.pos[1]+'%;"><img src="/dist/asset/img/0'+ (a.code < 10 ? ("0" + a.code) : a.code) +'.png" height="100%"></div>'
             })
 
@@ -189,15 +190,14 @@
 
             if(getScore >= 5){
                 _lny.submitResult("1", function(){
-                    self.delCookie("times");
+                    pfun.delCookie("times");
                     setTimeout(function(){
                         if(attention){
                             location.href = "/third?type=yattention";
                         }else{
                             location.href = "/third?type=nattention";
                         }  
-                    }, 200);
-                    
+                    }, 200); 
                 });
             }
         }else{
