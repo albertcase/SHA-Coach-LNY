@@ -1,6 +1,6 @@
 <?php
 
-define("BASE_URL", 'http://2017lny.samesamechina.com/');
+define("BASE_URL", 'http://10.77.46.137:9226/');
 define("TEMPLATE_ROOT", dirname(__FILE__) . '/../template');
 define("VENDOR_ROOT", dirname(__FILE__) . '/../vendor');
 
@@ -27,7 +27,7 @@ define("REDIS_PORT", '6379');
 //Database config info
 define("DBHOST", '127.0.0.1');
 define("DBUSER", 'root');
-define("DBPASS", '1qazxsw2');
+define("DBPASS", '');
 define("DBNAME", 'coach_lny');
 
 //Wechat Authorize

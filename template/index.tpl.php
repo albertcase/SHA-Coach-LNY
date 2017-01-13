@@ -240,7 +240,7 @@
         }else if(timesObj["_ts"] == "0"){
             location.href = "third.html?type=failure";
         }else{
-            location.href = "third.html?type=success";
+            location.href = "third.html?type=yattention";
         };
     })
 

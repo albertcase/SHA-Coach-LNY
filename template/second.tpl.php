@@ -8,44 +8,7 @@
     <meta name="screen-orientation" content="landscape">
     <!-- QQ强制竖屏 -->
     <meta name="x5-orientation" content="landscape">
-	<!--禁用手机号码链接(for iPhone)-->
-	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0,minimum-scale=1.0,maximum-scale=1.0,minimal-ui" />
-	<!--自适应设备宽度-->
-	<meta name="apple-mobile-web-app-status-bar-style" content="black">
-	<!--控制全屏时顶部状态栏的外，默认白色-->
-	<meta name="apple-mobile-web-app-capable" content="yes" />
-	<meta name="Keywords" content="">
-	<meta name="Description" content="...">
-    <style type="text/css">
-        
-        .IIV::-webkit-media-controls-play-button,
-        .IIV::-webkit-media-controls-start-playback-button {
-            opacity: 0;
-            pointer-events: none;
-            width: 5px;
-        }
 
-    </style>
-
-
-
-</head>
-<body>
-<?php echo $subscribe;?>
-<div class="loading">
-    <div class="cssload-loader">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
-</div>
-
-
-<div id="dreambox">
-    COACH LNY
-</div>
     <!--禁用手机号码链接(for iPhone)-->
     <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0,minimum-scale=1.0,maximum-scale=1.0,minimal-ui" />
     <!--自适应设备宽度-->
@@ -112,7 +75,7 @@
         "/dist/asset/img/p2.jpg",
         "/dist/asset/img/p3.jpg",
         "/dist/asset/img/p4.jpg",
-    ], getScore;
+    ], getScore, attention = <?php echo $subscribe;?>;
 
     pfun.loadingFnDoing(allimg, function(){
         //$(".loading").css({"visibility": "hidden"});
@@ -129,7 +92,7 @@
             ts: "",      // 元素默认旋转角度
             c: 0,        
             r: "",    
-            s: 16     // 倒计时时间
+            s: 16        // 倒计时时间
         };
 
         /* 公共函数 即 默认执行 */
@@ -169,7 +132,11 @@
 
                 // 倒计时结束
                 if(getScore >= 5){
-                    location.href = "/third?type=success";
+                    if(attention){
+                        location.href = "/third?type=yattention";
+                    }else{
+                        location.href = "/third?type=nattention";
+                    }  
                 }else{
                     location.href = "/third?type=failure";
                 }
@@ -226,12 +193,16 @@
             getScore = lnyCount;
 
             if(getScore >= 5){
-                location.href = "/third?type=success";
+                if(attention){
+                    location.href = "/third?type=yattention";
+                }else{
+                    location.href = "/third?type=nattention";
+                }
             }
         }else{
-           m.addClass("pulse animated").addClass("active").one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+            m.addClass("pulse animated").addClass("active").one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
                m.removeClass("pulse animated");
-            });; 
+            });
         }
             
         // e.preventDefault();

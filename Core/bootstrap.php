@@ -27,7 +27,7 @@ class Core {
 			self::sendResponse($callback, array());
 		}
 		foreach($routers as $router => $callback) {
-			$pattern = '/' . preg_replace(array('/\//', '/%/'), array('\/', '(.*)'), $router) . '/';
+			$pattern = '/' . preg_replace(array('/\//', '/%/'), array('\/', '(.*)'), $router) . '$/';
 			if(preg_match($pattern, $current_router, $matches)  && $router != '/') {
 				unset($matches[0]);
 				self::sendResponse($callback, $matches);
@@ -39,7 +39,7 @@ class Core {
 	static private function sendResponse($callback, $arg) {
 		$class = $callback[0] . 'Controller';
 		$method = $callback[1] . 'Action';
-		$response = call_user_func_array(array(new $class, $method), array());
+		$response = call_user_func_array(array(new $class, $method), $arg);
 		$response->send();
 		exit;
 	}

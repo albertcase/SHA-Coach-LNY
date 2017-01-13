@@ -30,7 +30,7 @@
     <div class="section" id="success_attention">
         <div class="footer">
             <a href="javascript:;" class="btn apply_btn">领取店铺红包</a>
-            <a href="javascript:_lny.sectionChange('storelist')" class="btn storelist_btn">门店列表</a>
+            <!-- <a href="javascript:_lny.sectionChange('storelist')" class="btn storelist_btn">门店列表</a> -->
         </div>
     </div>
 
@@ -73,19 +73,17 @@
 
 <script type="text/javascript">
 
-    var pType = (!pfun.getQueryString("type") ? "success" : pfun.getQueryString("type")), attention = 0;
+    var pType = (!pfun.getQueryString("type") ? "yattention" : pfun.getQueryString("type"));
 
     function lnyFun(){
         var self = this;
         self.init = function(){
             if(pType == "failure"){
                 self.sectionChange(pType);
+            }else if(pType == "nattention"){
+                self.sectionChange("success_not_attention");
             }else{
-                if(attention){
-                    self.sectionChange("success_attention");
-                }else{
-                    self.sectionChange("success_not_attention");
-                }
+                self.sectionChange("success_attention");
             }   
         }
         // 页面切换
