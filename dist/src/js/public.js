@@ -120,6 +120,10 @@ var pfun = {
                 link: shareArr._link,
                 imgUrl: shareArr._imgUrl,
                 success: function (res) {
+
+                    if(self.getQueryString("type") == "failure" && self.delCookie("shareTimes")){
+                        self.delCookie("shareTimes");
+                    }
                     // _hmt.push(['_trackEvent', 'share', 'ShareAppMessage']);
                     //  alert('已分享');
                 },
@@ -140,6 +144,9 @@ var pfun = {
                 imgUrl: shareArr._imgUrl,
 
                 success: function (res) {
+                    if(self.getQueryString("type") == "failure" && self.delCookie("shareTimes")){
+                        self.delCookie("shareTimes");
+                    }
                     // _hmt.push(['_trackEvent', 'share', 'ShareTimeline']);
                     // alert('已分享');
                 },
@@ -179,7 +186,7 @@ var pfun = {
             
         } , function (p){
             //$(".loading em").html(p);
-            console.log(p);
+            // console.log(p);
         });
     },
     overscroll: function(el){
