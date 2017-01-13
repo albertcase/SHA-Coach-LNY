@@ -129,7 +129,7 @@
 <script type="text/javascript" src="/dist/asset/js/public.min.js"></script>
 
 <script type="text/javascript">
-    var pType = pfun.getQueryString("delCookie");
+    var pType = pfun.getQueryString("delcookie");
     if(pType){
         pfun.delCookie("times")
     }
