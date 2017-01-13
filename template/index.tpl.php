@@ -163,7 +163,7 @@
         "/dist/asset/media/lny.mp4",
     ], lnyvideo = document.getElementById("lnyvideo");
 
-    if(timesObj["_ts"] != null){
+    if(timesObj["_ts"] != null || timesObj["_ts"] == 0){
         allimg = [
             "/dist/asset/img/logo.png",
             "/dist/asset/img/p1.jpg",
@@ -252,12 +252,12 @@
 
 
     $(".challenge_btn").on("click", function(){
-        if(timesObj["_ts"] == null){                              // 第一次进入游戏  /  分享之后得到次数
+        if(timesObj["_ts"] == null || timesObj["_ts"] == 0){                              // 第一次进入游戏  /  分享之后得到次数
             lnyvideo.play(); 
             setTimeout(function(){
                 _lny.sectionChange("video");
             }, 300);
-        }else if(timesObj["_ts"] == "0"){                         //游戏失败
+        }else if(timesObj["_ts"] == "2"){                         //游戏失败
             location.href = "/third?type=failure";
         }else{                                                    // 游戏完成
             location.href = "/third?type=yattention";
