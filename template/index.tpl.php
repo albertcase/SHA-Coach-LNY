@@ -161,7 +161,7 @@
 
         "/dist/asset/media/poster.jpg",
         "/dist/asset/media/lny.mp4",
-    ];
+    ], lnyvideo = document.getElementById("lnyvideo");;
 
     if(timesObj["_ts"] != null){
         allimg = [
@@ -223,8 +223,8 @@
 
         /* 事件函数 */
         self.videoFun = function(){
-            var lnyvideo = document.getElementById("lnyvideo");
-                lnyvideo.play(); 
+            //var lnyvideo = document.getElementById("lnyvideo");
+                //lnyvideo.play(); 
                 lnyvideo.style.height = "100%";
 
 
@@ -251,6 +251,7 @@
 
     $(".challenge_btn").on("click", function(){
         if(timesObj["_ts"] == null){                              // 第一次进入游戏  /  分享之后得到次数
+                lnyvideo.play(); 
             _lny.sectionChange("video");
         }else if(timesObj["_ts"] == "0"){                         //游戏失败
             location.href = "/third?type=failure";
