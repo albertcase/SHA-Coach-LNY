@@ -104,11 +104,12 @@ class DatabaseAPI {
 		$sql = "INSERT INTO `submit` SET `uid` = ?, `status` = ?"; 
 		$res = $this->connect()->prepare($sql); 
 		$res->bind_param("ss", $data->uid, $data->status);
-		if($res->execute()) 
+		if($res->execute()) {
 			setcookie("times", 1, time()+3600*24*30);
 			return $res->insert_id;
-		else 
+		} else {
 			return FALSE;
+		}
 	}
 
 	
