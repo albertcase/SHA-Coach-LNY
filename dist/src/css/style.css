@@ -181,7 +181,7 @@ img { pointer-events: none; }*/
 .gamesScenes{
     width: 100%;
     height: 100%;
-    margin: -2% 0 0 0;
+    /*margin: -2% 0 0 0;*/
     position: relative;
     z-index: 1;
 }

@@ -233,7 +233,7 @@ var animal = [
         {
             id: 34,
             code: "10",
-            pos: [121,78],
+            pos: [121,80],
             angle: "",
             size: "h18"
         },
@@ -338,7 +338,7 @@ var animal = [
         {
             id: 49,
             code: "5",
-            pos: [181,-10],
+            pos: [188,0],
             angle: "",
             size: "h29"
         },

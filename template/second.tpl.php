@@ -61,29 +61,7 @@
 <script type="text/javascript">
 
     var allimg = [
-        "/dist/asset/img/001.png",
-        "/dist/asset/img/002.png",
-        "/dist/asset/img/003.png",
-        "/dist/asset/img/004.png",
-        "/dist/asset/img/005.png",
-        "/dist/asset/img/006.png",
-        "/dist/asset/img/007.png",
-        "/dist/asset/img/008.png",
-        "/dist/asset/img/009.png",
-        "/dist/asset/img/010.png",
-        "/dist/asset/img/011.png",
-        "/dist/asset/img/012.png",
-        "/dist/asset/img/013.png",
-
-        "/dist/asset/img/close.png",
-        "/dist/asset/img/element.png",
-        "/dist/asset/img/icon-chicken.png",
-        "/dist/asset/img/icon-clock.png",
-        "/dist/asset/img/logo.png",
-        "/dist/asset/img/p1.jpg",
         "/dist/asset/img/p2.jpg",
-        "/dist/asset/img/p3.jpg",
-        "/dist/asset/img/p4.jpg",
     ], getScore, attention = "<?php echo $subscribe;?>";
 
     pfun.loadingFnDoing(allimg, function(){
@@ -106,10 +84,10 @@
 
         /* 公共函数 即 默认执行 */
         self.init = function(){   // 初始化执行函数
-
-            self.countdown(); // 开始倒计时
             self.gamesHTML(".gamesScenes"); // 填充元素
-            
+            setTimeout(function(){
+                self.countdown(); // 开始倒计时
+            }, 300)
         };
 
 
@@ -136,7 +114,7 @@
                 }
                 self.defaultSet["r"] = requestAnimationFrame(self.countdown);
             }else{
-
+                alert(6);
                 // 倒计时结束
                 if(getScore >= 5){
                     self.submitResult("1", function(){

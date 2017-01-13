@@ -253,8 +253,10 @@
 
     $(".challenge_btn").on("click", function(){
         if(timesObj["_ts"] == null){                              // 第一次进入游戏  /  分享之后得到次数
-                lnyvideo.play(); 
-            _lny.sectionChange("video");
+            lnyvideo.play(); 
+            setTimeout(function(){
+                _lny.sectionChange("video");
+            }, 300);
         }else if(timesObj["_ts"] == "0"){                         //游戏失败
             location.href = "/third?type=failure";
         }else{                                                    // 游戏完成
