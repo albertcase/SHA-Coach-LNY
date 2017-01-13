@@ -121,7 +121,7 @@ var pfun = {
                 imgUrl: shareArr._imgUrl,
                 success: function (res) {
 
-                    if(self.getQueryString("type") == "failure" && self.getCookie("times")){
+                    if(self.getQueryString("type") == "failure"){
                         self.delCookie("times");
                         location.href = "/";
                     }
@@ -145,7 +145,7 @@ var pfun = {
                 imgUrl: shareArr._imgUrl,
 
                 success: function (res) {
-                    if(self.getQueryString("type") == "failure" && self.getCookie("times")){
+                    if(self.getQueryString("type") == "failure"){
                         self.delCookie("times");
                         location.href = "/";
                     }
