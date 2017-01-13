@@ -105,8 +105,8 @@ class DatabaseAPI {
 		$res = $this->connect()->prepare($sql); 
 		$res->bind_param("ss", $data->uid, $data->status);
 		if($res->execute()) {
-			setcookie("times", 1, time()+3600*24*30, '/');
-			$_COOKIE['times'] = 1;
+			// setcookie("times", 1, time()+3600*24*30, '/');
+			// $_COOKIE['times'] = 1;
 			return $res->insert_id;
 		} else {
 			return FALSE;
