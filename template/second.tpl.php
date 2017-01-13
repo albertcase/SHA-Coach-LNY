@@ -75,7 +75,7 @@
         "/dist/asset/img/p2.jpg",
         "/dist/asset/img/p3.jpg",
         "/dist/asset/img/p4.jpg",
-    ], getScore, attention = <?php echo $subscribe;?>;
+    ], getScore, attention = "<?php echo $subscribe;?>";
 
     pfun.loadingFnDoing(allimg, function(){
         //$(".loading").css({"visibility": "hidden"});

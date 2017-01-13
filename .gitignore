@@ -4,3 +4,5 @@
 puppet/
 node_modules/
 dist/asset/media/
+config/
+

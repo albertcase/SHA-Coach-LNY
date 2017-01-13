@@ -158,7 +158,6 @@
         _lny.init();
     })
 
-    
     function lnyFun(){
         var self = this;
 
@@ -187,7 +186,7 @@
             $(".gamesInfo").css({"bottom": "-30%"});
 
             if(n == "video"){
-                self.videoFun("lnyvideo");
+                self.videoFun();
             }else if(n == "games"){
                 $(".gamesInfo").css({"bottom": 0});
             }else{
@@ -207,17 +206,17 @@
         }
 
         /* 事件函数 */
-        self.videoFun = function(n){
-            var v = document.getElementById(n);
-            v.play(); 
-            v.style.height = "100%";
+        self.videoFun = function(){
+            var lnyvideo = document.getElementById("lnyvideo");
+                lnyvideo.play(); 
+                lnyvideo.style.height = "100%";
 
 
-            self.eventTester(v, "ended", function(){
+            self.eventTester(lnyvideo, "ended", function(){
 
                 location.href = "/second";
-                v.pause(); 
-                v.style.height = "0";
+                lnyvideo.pause(); 
+                lnyvideo.style.height = "0";
                 // setTimeout(function(){
                 //     _lny.sectionChange("games");
                 // }, 2000)
@@ -238,9 +237,9 @@
         if(timesObj["_ts"] == null){                              // 第一次进入游戏  /  分享之后得到次数
             _lny.sectionChange("video");
         }else if(timesObj["_ts"] == "0"){                         //游戏失败
-            location.href = "third.html?type=failure";
+            location.href = "/third?type=failure";
         }else{                                                    // 游戏完成
-            location.href = "third.html?type=yattention";
+            location.href = "/third?type=yattention";
         };
     })
 
