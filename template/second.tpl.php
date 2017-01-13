@@ -70,7 +70,7 @@
         pfun.init();
     })
 
-    self.gamesHTML(".gamesScenes"); // 填充元素
+    _lny.gamesHTML(".gamesScenes"); // 填充元素
 
     function lnyFun(){
         var self = this;
@@ -85,7 +85,6 @@
 
         /* 公共函数 即 默认执行 */
         self.init = function(){   // 初始化执行函数
-            
             setTimeout(function(){
                 self.countdown(); // 开始倒计时
             }, 300)
