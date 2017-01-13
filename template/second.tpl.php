@@ -64,13 +64,6 @@
         "/dist/asset/img/p2.jpg",
     ], getScore, attention = "<?php echo $subscribe;?>";
 
-    pfun.loadingFnDoing(allimg, function(){
-        //$(".loading").css({"visibility": "hidden"});
-        _lny.init();
-        pfun.init();
-    })
-
-    _lny.gamesHTML(".gamesScenes"); // 填充元素
 
     function lnyFun(){
         var self = this;
@@ -168,6 +161,14 @@
 
 
     var _lny = new lnyFun();
+
+    pfun.loadingFnDoing(allimg, function(){
+        //$(".loading").css({"visibility": "hidden"});
+        _lny.init();
+        pfun.init();
+    })
+
+    _lny.gamesHTML(".gamesScenes"); // 填充元素
 
     
 
