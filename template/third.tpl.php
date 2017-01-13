@@ -72,7 +72,7 @@
 <script type="text/javascript" src="/dist/asset/js/public.min.js"></script>
 
 <script type="text/javascript">
-
+    pfun.init();
     var pType = (!pfun.getQueryString("type") ? "yattention" : pfun.getQueryString("type"));
 
     function lnyFun(){

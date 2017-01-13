@@ -154,7 +154,6 @@
 
     pfun.loadingFnDoing(allimg, function(){
         $(".loading").css({"visibility": "hidden"});
-        //pfun.init();
         _lny.init();
     })
 
@@ -164,6 +163,7 @@
         /* 公共函数 即 默认执行 */
         self.init = function(){   // 初始化执行函数
             self.sectionChange("home"); 
+            pfun.init();
         };
 
         // 视频事件监测
