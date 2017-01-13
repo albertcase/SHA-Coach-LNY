@@ -158,7 +158,7 @@
         _lny.init();
     })
 
-    
+    var lnyvideo = document.getElementById("lnyvideo");
     function lnyFun(){
         var self = this;
 
@@ -187,7 +187,7 @@
             $(".gamesInfo").css({"bottom": "-30%"});
 
             if(n == "video"){
-                self.videoFun("lnyvideo");
+                self.videoFun();
             }else if(n == "games"){
                 $(".gamesInfo").css({"bottom": 0});
             }else{
@@ -207,17 +207,17 @@
         }
 
         /* 事件函数 */
-        self.videoFun = function(n){
-            var v = document.getElementById(n);
-                v.play(); 
-                v.style.height = "100%";
+        self.videoFun = function(){
+
+                lnyvideo.play(); 
+                lnyvideo.style.height = "100%";
 
 
-            self.eventTester(v, "ended", function(){
+            self.eventTester(lnyvideo, "ended", function(){
 
                 location.href = "/second";
-                v.pause(); 
-                v.style.height = "0";
+                lnyvideo.pause(); 
+                lnyvideo.style.height = "0";
                 // setTimeout(function(){
                 //     _lny.sectionChange("games");
                 // }, 2000)
