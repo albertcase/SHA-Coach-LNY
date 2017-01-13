@@ -49,6 +49,14 @@
     </div>
 </div>
 
+<!-- 横屏代码 -->
+<div id="orientLayer" class="mod-orient-layer">
+    <div class="mod-orient-layer__content">
+        <i class="icon mod-orient-layer__icon-orient"></i>
+        <div class="mod-orient-layer__desc">请在解锁模式下，横屏体验游戏</div>
+    </div>
+</div>
+
 <div id="dreambox">
 
     <!-- 首页 -->
@@ -64,7 +72,7 @@
 
     <!-- 活动视频 -->
     <div class="section" id="video">
-        <video width="100%" height="0" id="lnyvideo" preload="auto" playsinline webkit-playsinline src="/dist/asset/media/lny.mp4" poster="/dist/asset/media/poster.jpg"></video>
+        <video width="100%" height="0" id="lnyvideo" playsinline webkit-playsinline src="/dist/asset/media/lny.mp4" poster="/dist/asset/media/poster.jpg"></video>
     </div>
 
 
@@ -150,7 +158,21 @@
         "/dist/asset/img/p2.jpg",
         "/dist/asset/img/p3.jpg",
         "/dist/asset/img/p4.jpg",
-    ];
+
+        "/dist/asset/media/poster.jpg",
+        "/dist/asset/media/lny.mp4",
+    ], lnyvideo = document.getElementById("lnyvideo");
+
+    if(timesObj["_ts"] != null){
+        allimg = [
+            "/dist/asset/img/logo.png",
+            "/dist/asset/img/p1.jpg",
+            "/dist/asset/img/p3.jpg",
+            "/dist/asset/img/p4.jpg",
+        ]
+    };
+
+    console.log(allimg);
 
     pfun.loadingFnDoing(allimg, function(){
         $(".loading").css({"visibility": "hidden"});
@@ -181,17 +203,13 @@
 
         // 页面切换
         self.sectionChange = function(n){        // section 页面切换
-            $(".section").removeClass("show transition");
-            $("#" + n).addClass('show transition');
-            $(".gamesInfo").css({"bottom": "-30%"});
 
             if(n == "video"){
                 self.videoFun();
-            }else if(n == "games"){
-                $(".gamesInfo").css({"bottom": 0});
-            }else{
-
             }
+
+            $(".section").removeClass("show transition");
+            $("#" + n).addClass('show transition');  
         }
 
         // 弹层
@@ -207,8 +225,8 @@
 
         /* 事件函数 */
         self.videoFun = function(){
-            var lnyvideo = document.getElementById("lnyvideo");
-                lnyvideo.play(); 
+            //var lnyvideo = document.getElementById("lnyvideo");
+                //lnyvideo.play(); 
                 lnyvideo.style.height = "100%";
 
 
@@ -235,7 +253,10 @@
 
     $(".challenge_btn").on("click", function(){
         if(timesObj["_ts"] == null){                              // 第一次进入游戏  /  分享之后得到次数
-            _lny.sectionChange("video");
+            lnyvideo.play(); 
+            setTimeout(function(){
+                _lny.sectionChange("video");
+            }, 300);
         }else if(timesObj["_ts"] == "0"){                         //游戏失败
             location.href = "/third?type=failure";
         }else{                                                    // 游戏完成
@@ -271,13 +292,7 @@ console.log(timesObj["_ts"]);
 
 </script>
 
-<!-- 横屏代码 -->
-<div id="orientLayer" class="mod-orient-layer">
-    <div class="mod-orient-layer__content">
-        <i class="icon mod-orient-layer__icon-orient"></i>
-        <div class="mod-orient-layer__desc">请在解锁模式下，横屏体验游戏</div>
-    </div>
-</div>
+
 
 </body>
 </html>

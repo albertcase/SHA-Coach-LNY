@@ -121,8 +121,9 @@ var pfun = {
                 imgUrl: shareArr._imgUrl,
                 success: function (res) {
 
-                    if(self.getQueryString("type") == "failure" && self.getCookie("times")){
-                        self.delCookie("times");
+                    if(self.getQueryString("type") == "failure"){
+                        pfun.setCookie("times", null, "360");
+                        location.href = "/";
                     }
                     // _hmt.push(['_trackEvent', 'share', 'ShareAppMessage']);
                     //  alert('已分享');
@@ -144,8 +145,9 @@ var pfun = {
                 imgUrl: shareArr._imgUrl,
 
                 success: function (res) {
-                    if(self.getQueryString("type") == "failure" && self.getCookie("times")){
-                        self.delCookie("times");
+                    if(self.getQueryString("type") == "failure"){
+                        pfun.setCookie("times", null, "360");
+                        location.href = "/";
                     }
                     // _hmt.push(['_trackEvent', 'share', 'ShareTimeline']);
                     // alert('已分享');
