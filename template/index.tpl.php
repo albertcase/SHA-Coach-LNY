@@ -237,9 +237,9 @@
         if(timesObj["_ts"] == null){                              // 第一次进入游戏  /  分享之后得到次数
             _lny.sectionChange("video");
         }else if(timesObj["_ts"] == "0"){                         //游戏失败
-            location.href = "third.html?type=failure";
+            location.href = "/third?type=failure";
         }else{                                                    // 游戏完成
-            location.href = "third.html?type=yattention";
+            location.href = "/third?type=yattention";
         };
     })
 
