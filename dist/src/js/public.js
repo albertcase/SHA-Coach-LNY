@@ -122,7 +122,7 @@ var pfun = {
                 success: function (res) {
 
                     if(self.getQueryString("type") == "failure"){
-                        self.delCookie("times");
+                        self.setCookie("times", "0", "360");
                         location.href = "/";
                     }
                     // _hmt.push(['_trackEvent', 'share', 'ShareAppMessage']);
@@ -146,7 +146,7 @@ var pfun = {
 
                 success: function (res) {
                     if(self.getQueryString("type") == "failure"){
-                        self.delCookie("times");
+                        self.setCookie("times", "0", "360");
                         location.href = "/";
                     }
                     // _hmt.push(['_trackEvent', 'share', 'ShareTimeline']);
