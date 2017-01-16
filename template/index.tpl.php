@@ -225,7 +225,7 @@
             //var lnyvideo = document.getElementById("lnyvideo");
                 //lnyvideo.play(); 
                 lnyvideo.style.height = "103%";
-                lnyvideo.style.margin = "-1.5% 0 0 0";
+                lnyvideo.style.margin = "-1.2% 0 0 0";
 
             self.eventTester(lnyvideo, "ended", function(){
 
