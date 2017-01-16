@@ -149,7 +149,7 @@
                 nextButton: '.swiper-button-next',
                 prevButton: '.swiper-button-prev'
             });
-            
+
             setTimeout(function(){
                 self.countdown(); // 开始倒计时
             }, 300);
@@ -219,7 +219,7 @@
                 // }else{
                 //     self.defaultSet["ts"] = "0deg";
                 // }
-                return '<div class="animal '+ a.size +'" data-num="'+ parseInt(b+1, 10) +'" data-type="'+ self.defaultSet["ec"][b] +'" style="left: '+a.pos[0]+'%; top: '+a.pos[1]+'%;"><img src="/dist/asset/img/0'+ (a.code < 10 ? ("0" + a.code) : a.code) +'.png" height="100%"></div>'
+                return '<div class="animal '+ a.size +'" data-num="'+ parseInt(b+1, 10) +'" data-type="'+ self.defaultSet["ec"][b] +'" style="left: '+parseInt(a.pos[0]/2.05, 10)+'%; top: '+a.pos[1]+'%;"><img src="/dist/asset/img/0'+ (a.code < 10 ? ("0" + a.code) : a.code) +'.png" height="100%"></div>'
             })
 
             $(n).append(gamesCodeHTML);
