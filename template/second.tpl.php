@@ -95,18 +95,24 @@
 <script type="text/javascript" src="/dist/asset/js/public.min.js"></script>
 
 <script type="text/javascript">
-    var _cookieTimes = pfun.getCookie("times");
-    if(_cookieTimes == 2){   // 没有游戏次数时返回禁用
-        location.href = "/third?type=failure";
-    }else if(_cookieTimes == 1){
-        if(attention){
-            location.href = "/third?type=yattention";
+    window.addEventListener("popstate", function(e) {
+        
+        var _cookieTimes = pfun.getCookie("times");
+        if(_cookieTimes == 2){   // 没有游戏次数时返回禁用
+            location.href = "/third?type=failure";
+        }else if(_cookieTimes == 1){
+            if(attention){
+                location.href = "/third?type=yattention";
+            }else{
+                location.href = "/third?type=nattention";
+            }  
         }else{
-            location.href = "/third?type=nattention";
-        }  
-    }else{
 
-    }
+        }
+
+    }, true);
+
+    
 
     var allimg = [
         "/dist/asset/img/p2.jpg",
