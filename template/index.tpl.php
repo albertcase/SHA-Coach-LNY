@@ -80,7 +80,7 @@
 
     <!-- 活动视频 -->
     <div class="section" id="video">
-        <video width="100%" height="0" id="lnyvideo" playsinline webkit-playsinline src="/dist/asset/media/lny.mp4" poster="/dist/asset/media/poster.jpg"></video>
+        <video width="100%" height="0" id="lnyvideo" preload="auto" playsinline webkit-playsinline src="/dist/asset/media/lny.mp4" poster="/dist/asset/media/poster.jpg"></video>
     </div>
 
 
