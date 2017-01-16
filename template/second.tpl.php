@@ -95,24 +95,7 @@
 <script type="text/javascript" src="/dist/asset/js/public.min.js"></script>
 
 <script type="text/javascript">
-    var _cookieTimes = pfun.getCookie("times");
-    alert(_cookieTimes);
-    if(_cookieTimes == 2){   // 没有游戏次数时返回禁用
-        alert(6);
-        location.href = "http://www.baidu.com";
-    }else if(_cookieTimes == 1){
-        alert(7);
-        if(attention){
-            location.href = "/third?type=yattention";
-        }else{
-            location.href = "/third?type=nattention";
-        }  
-    }else{
-        alert(8);
-    }
-
     
-
     var allimg = [
         "/dist/asset/img/p2.jpg",
         "/dist/asset/img/icon-clock.png",
@@ -241,9 +224,26 @@
     var _lny = new lnyFun();
 
     pfun.loadingFnDoing(allimg, function(){
-        $(".loading").css({"visibility": "hidden"});
-        _lny.init();
-        pfun.init();
+
+        var _cookieTimes = pfun.getCookie("times");
+        alert(_cookieTimes);
+        if(_cookieTimes == 2){   // 没有游戏次数时返回禁用
+            alert(6);
+            location.href = "/third?type=failure";
+        }else if(_cookieTimes == 1){
+            alert(7);
+            if(attention){
+                location.href = "/third?type=yattention";
+            }else{
+                location.href = "/third?type=nattention";
+            }  
+        }else{
+            alert(9);
+            $(".loading").css({"visibility": "hidden"});
+            _lny.init();
+            pfun.init();
+        } 
+        
     })
 
     _lny.gamesHTML(".gamesScenes"); // 填充元素
