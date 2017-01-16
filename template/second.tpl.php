@@ -34,6 +34,18 @@
 </head>
 <body>
 
+<div class="loading">
+    <div class="loading_con">
+        <img src="/dist/asset/img/logo.png" width="100%">
+
+        <div class="spinner">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+        </div>
+        <p>目前涌入的小伙伴过多<br>页面正在跳转中，请耐心等待。</p>
+    </div>
+</div>
 
 <!-- 横屏代码 -->
 <div id="orientLayer" class="mod-orient-layer">
@@ -84,6 +96,22 @@
 
     var allimg = [
         "/dist/asset/img/p2.jpg",
+        "/dist/asset/img/icon-clock.png",
+        "/dist/asset/img/element.png",
+        "/dist/asset/img/icon-chicken.png",
+        "/dist/asset/img/001.png",
+        "/dist/asset/img/002.png",
+        "/dist/asset/img/003.png",
+        "/dist/asset/img/004.png",
+        "/dist/asset/img/005.png",
+        "/dist/asset/img/006.png",
+        "/dist/asset/img/007.png",
+        "/dist/asset/img/008.png",
+        "/dist/asset/img/009.png",
+        "/dist/asset/img/010.png",
+        "/dist/asset/img/011.png",
+        "/dist/asset/img/012.png",
+        "/dist/asset/img/013.png",
     ], getScore, attention = "<?php echo $subscribe;?>";
 
 
@@ -102,7 +130,8 @@
         self.init = function(){   // 初始化执行函数
             setTimeout(function(){
                 self.countdown(); // 开始倒计时
-            }, 300)
+            }, 300);
+            $("#dreambox").css({"visibility": "visible"});
         };
 
 
@@ -185,7 +214,7 @@
     var _lny = new lnyFun();
 
     pfun.loadingFnDoing(allimg, function(){
-        //$(".loading").css({"visibility": "hidden"});
+        $(".loading").css({"visibility": "hidden"});
         _lny.init();
         pfun.init();
     })

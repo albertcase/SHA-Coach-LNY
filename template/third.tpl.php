@@ -106,7 +106,9 @@
                 self.sectionChange("success_not_attention");
             }else{
                 self.sectionChange("success_attention");
-            }   
+            }  
+
+            $("#dreambox").css({"visibility": "visible"}); 
         }
         // 页面切换
         self.sectionChange = function(n){        // section 页面切换

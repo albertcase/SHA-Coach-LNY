@@ -148,24 +148,7 @@
     }
 
     var allimg = [
-        "/dist/asset/img/001.png",
-        "/dist/asset/img/002.png",
-        "/dist/asset/img/003.png",
-        "/dist/asset/img/004.png",
-        "/dist/asset/img/005.png",
-        "/dist/asset/img/006.png",
-        "/dist/asset/img/007.png",
-        "/dist/asset/img/008.png",
-        "/dist/asset/img/009.png",
-        "/dist/asset/img/010.png",
-        "/dist/asset/img/011.png",
-        "/dist/asset/img/012.png",
-        "/dist/asset/img/013.png",
-
         "/dist/asset/img/close.png",
-        "/dist/asset/img/element.png",
-        "/dist/asset/img/icon-chicken.png",
-        "/dist/asset/img/icon-clock.png",
         "/dist/asset/img/logo.png",
         "/dist/asset/img/p1.jpg",
         "/dist/asset/img/p2.jpg",
@@ -199,6 +182,7 @@
         self.init = function(){   // 初始化执行函数
             self.sectionChange("home"); 
             pfun.init();
+            $("#dreambox").css({"visibility": "visible"});
         };
 
         // 视频事件监测
