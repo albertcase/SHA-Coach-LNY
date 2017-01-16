@@ -157,7 +157,7 @@
 
         "/dist/asset/media/poster.jpg",
         "/dist/asset/media/lny.mp4",
-    ], lnyvideo = document.getElementById("lnyvideo");
+    ];
 
     if(timesObj["_ts"] != null || timesObj["_ts"] == 0){
         allimg = [
@@ -186,6 +186,11 @@
 
             pfun.overscroll(document.querySelector("#pop-rule"));  // 活动规则滚动条
         };
+
+        this.creatMedia = function(_id, _url, _ap, _poster){    // 创建视频
+            var video = '<video width="100%" height="100%" id="'+_id+'" preload="auto" playsinline webkit-playsinline src="'+_url+'" poster="'+_poster+'"></video>'
+            return video;
+        }
 
         // 视频事件监测
         self.eventTester = function(m, e, c){    // 视频事件监测函数
@@ -224,8 +229,9 @@
 
         /* 事件函数 */
         self.videoFun = function(){
-            //var lnyvideo = document.getElementById("lnyvideo");
+            var lnyvideo = document.getElementById("lnyvideo");
                 //lnyvideo.play(); 
+                lnyvideo
                 lnyvideo.style.height = "103%";
                 lnyvideo.style.margin = "-1% 0 0 0";
 
@@ -252,6 +258,9 @@
 
     $(".challenge_btn").on("click", function(){
         if(timesObj["_ts"] == null || timesObj["_ts"] == 0){                              // 第一次进入游戏  /  分享之后得到次数
+            var videoHTML = _lny.creatMedia("lnyvideo", "/dist/asset/media/lny.mp4", false, "/dist/asset/media/poster.jpg");
+            $("#video").html(videoHTML);
+            var lnyvideo = document.getElementById("lnyvideo");
             lnyvideo.play(); 
             setTimeout(function(){
                 _hmt.push(['_trackEvent', 'play', 'video', '视频播放次数']);

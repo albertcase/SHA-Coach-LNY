@@ -63,7 +63,7 @@
 
     <!-- 活动视频 -->
     <div class="section" id="video">
-        <video width="100%" height="auto" id="lnyvideo" preload="auto" playsinline webkit-playsinline src="/dist/asset/media/lny.mp4" poster="/dist/asset/media/poster.jpg"></video>
+        <!-- <video width="100%" height="auto" id="lnyvideo" preload="auto" playsinline webkit-playsinline src="/dist/asset/media/lny.mp4" poster="/dist/asset/media/poster.jpg"></video> -->
     </div>
 
 
@@ -167,6 +167,11 @@
             pfun.overscroll(document.querySelector("#pop-rule"));  // 活动规则滚动条
         };
 
+        this.creatMedia = function(_id, _url, _ap, _poster){    // 创建视频
+            var video = '<video width="100%" height="100%" id="'+_id+'" preload="auto" playsinline webkit-playsinline src="'+_url+'" poster="'+_poster+'"></video>'
+            return video;
+        }
+
         // 视频事件监测
         self.eventTester = function(m, e, c){    // 视频事件监测函数
             /*
@@ -236,6 +241,7 @@
 
     $(".challenge_btn").on("click", function(){
         if(timesObj["_ts"] == null || timesObj["_sts"] == null){
+            $("#video").html(_lny.creatMedia("lnyvideo", "/dist/asset/media/lny.mp4", false, "/dist/asset/media/poster.jpg"));
             _lny.sectionChange("video");
         }else if(timesObj["_ts"] == "0"){
             location.href = "third.html?type=failure";
