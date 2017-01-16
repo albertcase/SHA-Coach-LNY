@@ -32,4 +32,24 @@ class CurioWechatAPI {
 	    else
 	      return FALSE;
 	}
+
+	public function cardList($cardid){
+	    $api_url = 'http://coach.samesamechina.com/v2/wx/card/js/add/json?access_token='. TOKEN;
+        $data[] = array(
+            'card_id' => $cardid,
+            'code' => '',
+            'openid' => ''
+        );   
+	    $ch = curl_init ();
+	    curl_setopt ( $ch, CURLOPT_URL, $api_url );
+	    curl_setopt ( $ch, CURLOPT_POST, 1 );
+	    curl_setopt ( $ch, CURLOPT_HEADER, 0 );
+	    curl_setopt ( $ch, CURLOPT_RETURNTRANSFER, 1 );
+	    curl_setopt ( $ch, CURLOPT_POSTFIELDS, json_encode($data) );
+	    $return = curl_exec ( $ch );
+	    curl_close ( $ch );
+	    $return = json_decode($return,true);
+
+	    return $cardList = $return['data']['cardList'];
+	  }
 }

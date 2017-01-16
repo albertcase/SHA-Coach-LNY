@@ -65,4 +65,11 @@ class ApiController extends Controller {
 		}
     }
 
+    public function cardAction() {
+		$card = 'pKCDxjpR7kxh7S9bvlILg2lDTBUY';
+		$wechatapi = new \Lib\CurioWechatAPI();
+		$list = $wechatapi->cardList($card);
+		return $this->statusPrint(1, $list);
+	}
+
 }
