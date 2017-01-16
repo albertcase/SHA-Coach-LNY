@@ -30,9 +30,9 @@
 
 
 var shareArr = {
-    "_title": '2017和coach一起，找到超“鸡”幸运', //分享标题
-    "_desc": "2017和coach一起，找到超“鸡”幸运",    // 分享朋友圈的描述
-    "_desc_friend": "在coach摩登潮宝中找到你的新年超“鸡”幸运吧",    // 分享好友的描述
+    "_title": '2017“酉”鸿运！', //分享标题
+    "_desc": "2017“酉”鸿运！",    // 分享朋友圈的描述
+    "_desc_friend": "鸿运红包等你拿！",    // 分享好友的描述
     "_link": window.location.host,    //分享的连接
     "_imgUrl": "http://" + window.location.host + "/dist/asset/img/share.jpg",   //分享的图片
     "_url": encodeURIComponent(window.location)//encodeURIComponent(window.location.href.split("#")[0]) //.replace('http%3A%2F%2F','')
@@ -243,12 +243,12 @@ var pfun = {
 }
 
 
-// document.body.addEventListener('touchmove', function(evt) {
-//     //In this case, the default behavior is scrolling the body, which
-//     //would result in an overflow.  Since we don't want that, we preventDefault.
-//     if(!evt._isScroller) {
-//         evt.preventDefault()
-//     }
-// });
+document.body.addEventListener('touchmove', function(evt) {
+    //In this case, the default behavior is scrolling the body, which
+    //would result in an overflow.  Since we don't want that, we preventDefault.
+    if(!evt._isScroller) {
+        evt.preventDefault()
+    }
+});
 
 

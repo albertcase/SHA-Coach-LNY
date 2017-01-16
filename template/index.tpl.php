@@ -183,6 +183,8 @@
             self.sectionChange("home"); 
             pfun.init();
             $("#dreambox").css({"visibility": "visible"});
+
+            pfun.overscroll(document.querySelector("#pop-rule"));  // 活动规则滚动条
         };
 
         // 视频事件监测
