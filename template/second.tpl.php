@@ -95,25 +95,19 @@
 <script type="text/javascript" src="/dist/asset/js/public.min.js"></script>
 
 <script type="text/javascript">
-alert(9);
-    window.addEventListener("popstate", function(e) {
-
-        var _cookieTimes = pfun.getCookie("times");
-        alert(6);
-        alert(_cookieTimes);
-        if(_cookieTimes == 2){   // 没有游戏次数时返回禁用
-            location.href = "/third?type=failure";
-        }else if(_cookieTimes == 1){
-            if(attention){
-                location.href = "/third?type=yattention";
-            }else{
-                location.href = "/third?type=nattention";
-            }  
+    var _cookieTimes = pfun.getCookie("times");
+    alert(_cookieTimes);
+    if(_cookieTimes == 2){   // 没有游戏次数时返回禁用
+        location.href = "/third?type=failure";
+    }else if(_cookieTimes == 1){
+        if(attention){
+            location.href = "/third?type=yattention";
         }else{
+            location.href = "/third?type=nattention";
+        }  
+    }else{
 
-        }
-
-    }, true);
+    }
 
     
 
