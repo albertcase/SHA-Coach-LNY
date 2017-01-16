@@ -60,7 +60,7 @@
     <!-- games -->
     <div class="section show transition" id="games">
         <div class="gamesScenes">
-            <img src="/dist/src/img/element.png" height="100%" style="opacity: 0">
+            <img src="/dist/src/img/element.png" height="100%" style="opacity: 0;">
         </div>
     </div>
 

@@ -56,7 +56,7 @@
 
     <!-- 成功(未关注) -->
     <div class="section" id="success_not_attention">
-        <img src="/dist/asset/img/p3.jpg" height="100%">
+        <img src="/dist/asset/img/p3.jpg" height="100%" style="opacity: 0;">
         <div class="footer">
             <a href="javascript:_lny.sectionChange('success_attention')" onclick="_hmt.push(['_trackEvent', 'click', 'btn', '下一步']);" class="btn next_btn">下一步</a>
         </div>
