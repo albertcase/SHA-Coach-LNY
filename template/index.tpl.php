@@ -224,7 +224,7 @@
         self.videoFun = function(){
             //var lnyvideo = document.getElementById("lnyvideo");
                 //lnyvideo.play(); 
-                lnyvideo.style.height = "100%";
+                lnyvideo.style.height = "auto";
 
 
             self.eventTester(lnyvideo, "ended", function(){
