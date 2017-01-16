@@ -98,6 +98,7 @@
     window.addEventListener("popstate", function(e) {
 
         var _cookieTimes = pfun.getCookie("times");
+        alert(6);
         alert(_cookieTimes);
         if(_cookieTimes == 2){   // 没有游戏次数时返回禁用
             location.href = "/third?type=failure";
