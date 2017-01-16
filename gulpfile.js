@@ -37,7 +37,7 @@ gulp.task('minifycss', function() {
 
 //js压缩
 gulp.task('minifyjs', ["publicjs"], function() {
-    return gulp.src(['dist/src/js/jquery.js', 'dist/src/js/PxLoader.js', 'dist/src/js/tweenMax.min.js'])
+    return gulp.src(['dist/src/js/jquery.js', 'dist/src/js/PxLoader.js', 'dist/src/js/tweenMax.min.js', 'dist/src/js/swiper.min.js'])
         .pipe(concat('all.js'))                  //合并所有js到main.js
         //.pipe(gulp.dest('minified/js'))           //输出main.js到文件夹
         .pipe(rename({suffix: '.min'}))           //rename压缩后的文件名

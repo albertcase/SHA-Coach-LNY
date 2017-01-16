@@ -59,8 +59,22 @@
 
     <!-- games -->
     <div class="section show transition" id="games">
-        <div class="gamesScenes">
-            <img src="/dist/src/img/element.png" height="100%" style="opacity: 0;">
+        <!-- Swiper -->
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="gamesScenes">
+                            <img src="/dist/src/img/element.png" height="100%" style="opacity: 0">
+                        </div>
+                    </div>
+            </div>
+            <!-- Add Arrows -->
+            <div class="swiper-button-prev">
+                <img src="/dist/src/img/arr_l.png" width="100%">
+            </div>
+            <div class="swiper-button-next">
+                <img src="/dist/src/img/arr_r.png" width="100%">
+            </div>
         </div>
     </div>
 
@@ -128,6 +142,14 @@
 
         /* 公共函数 即 默认执行 */
         self.init = function(){   // 初始化执行函数
+            var swiper = new Swiper('.swiper-container', {
+                direction: 'horizontal',
+                slidesPerView: 'auto',
+                freeMode: true,
+                nextButton: '.swiper-button-next',
+                prevButton: '.swiper-button-prev'
+            });
+            
             setTimeout(function(){
                 self.countdown(); // 开始倒计时
             }, 300);

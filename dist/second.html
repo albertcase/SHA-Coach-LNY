@@ -27,8 +27,22 @@
 
     <!-- games -->
     <div class="section show transition" id="games">
-        <div class="gamesScenes">
-            <img src="/dist/src/img/element.png" height="100%" style="opacity: 0">
+        <!-- Swiper -->
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="gamesScenes">
+                            <img src="/dist/src/img/element.png" height="100%" style="opacity: 0">
+                        </div>
+                    </div>
+            </div>
+            <!-- Add Arrows -->
+            <div class="swiper-button-prev">
+                <img src="/dist/src/img/arr_l.png" width="100%">
+            </div>
+            <div class="swiper-button-next">
+                <img src="/dist/src/img/arr_r.png" width="100%">
+            </div>
         </div>
     </div>
 
@@ -69,7 +83,8 @@
         "/dist/asset/img/element.png",
         "/dist/asset/img/icon-chicken.png",
         "/dist/asset/img/icon-clock.png",
-        "/dist/asset/img/logo.png",
+        "/dist/asset/img/arr_r.png",
+        "/dist/asset/img/arr_l.png",
         "/dist/asset/img/p1.jpg",
         "/dist/asset/img/p2.jpg",
         "/dist/asset/img/p3.jpg",
@@ -96,10 +111,17 @@
 
         /* 公共函数 即 默认执行 */
         self.init = function(){   // 初始化执行函数
+            var swiper = new Swiper('.swiper-container', {
+                direction: 'horizontal',
+                slidesPerView: 'auto',
+                freeMode: true,
+                nextButton: '.swiper-button-next',
+                prevButton: '.swiper-button-prev'
+            });
 
             self.countdown(); // 开始倒计时
             self.gamesHTML(".gamesScenes"); // 填充元素
-            
+
         };
 
 
@@ -127,11 +149,11 @@
                 self.defaultSet["r"] = requestAnimationFrame(self.countdown);
             }else{
                 // 倒计时结束
-                if(getScore >= 5){
-                    location.href = "third.html?type=success";
-                }else{
-                    location.href = "third.html?type=failure";
-                }
+                // if(getScore >= 5){
+                //     location.href = "third.html?type=success";
+                // }else{
+                //     location.href = "third.html?type=failure";
+                // }
                 
             }
         }
@@ -154,10 +176,12 @@
                 }else{
                     self.defaultSet["ts"] = "0deg";
                 }
-                return '<div class="animal '+ a.size +'" data-num="'+ parseInt(b+1, 10) +'" data-type="'+ self.defaultSet["ec"][b] +'" style="left: '+a.pos[0]+'%; top: '+a.pos[1]+'%;"><img src="/dist/asset/img/0'+ (a.code < 10 ? ("0" + a.code) : a.code) +'.png" height="100%"></div>'
+                return '<div class="animal '+ a.size +'" data-num="'+ parseInt(b+1, 10) +'" data-type="'+ self.defaultSet["ec"][b] +'" style="left: '+a.pos[0]/2.05+'%; top: '+a.pos[1]+'%;"><img src="/dist/asset/img/0'+ (a.code < 10 ? ("0" + a.code) : a.code) +'.png" height="100%"></div>'
             })
 
             $(n).append(gamesCodeHTML);
+
+
         }
 
 
