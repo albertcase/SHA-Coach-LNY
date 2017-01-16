@@ -95,6 +95,7 @@
 <script type="text/javascript" src="/dist/asset/js/public.min.js"></script>
 
 <script type="text/javascript">
+alert(9);
     window.addEventListener("popstate", function(e) {
 
         var _cookieTimes = pfun.getCookie("times");
