@@ -98,15 +98,17 @@
     var _cookieTimes = pfun.getCookie("times");
     alert(_cookieTimes);
     if(_cookieTimes == 2){   // 没有游戏次数时返回禁用
+        alert(6);
         location.href = "/third?type=failure";
     }else if(_cookieTimes == 1){
+        alert(7);
         if(attention){
             location.href = "/third?type=yattention";
         }else{
             location.href = "/third?type=nattention";
         }  
     }else{
-
+        alert(8);
     }
 
     
