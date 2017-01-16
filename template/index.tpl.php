@@ -270,7 +270,7 @@
             setTimeout(function(){
                 _hmt.push(['_trackEvent', 'play', 'video', '视频播放次数']);
                 _lny.sectionChange("video");
-            }, 300);
+            }, 600);
         }else if(timesObj["_ts"] == "2"){                         //游戏失败
             location.href = "/third?type=failure";
         }else{                                                    // 游戏完成
