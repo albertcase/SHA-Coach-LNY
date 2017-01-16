@@ -64,6 +64,9 @@ img { pointer-events: none; }*/
     transform-style: preserve-3d;
 }
 
+#video{
+    background: rgba(0, 0, 0, 1);
+}
 
 .animal{
     /*background: rgba(27,56,67,.5);*/
