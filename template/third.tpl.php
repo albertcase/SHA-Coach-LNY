@@ -21,6 +21,16 @@
     <script type="text/javascript" src="/dist/asset/js/all.min.js"></script>
     <script type="text/javascript" src="http://coach.samesamechina.com/api/v1/js/9a6edd5b-c1bc-4d6a-9dd4-b03defc4ff46/wechat"></script>
 
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?6cd44258dd7a23d93973055d942129ed";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
 </head>
 <body>
 
@@ -39,7 +49,7 @@
     <!-- 成功(已关注) -->
     <div class="section" id="success_attention">
         <div class="footer">
-            <a href="javascript:;" class="btn apply_btn">领取店铺红包</a>
+            <a href="javascript:_lny.getCard();" onclick="_hmt.push(['_trackEvent', 'click', 'btn', '领取店铺红包']);" class="btn apply_btn">领取店铺红包</a>
             <!-- <a href="javascript:_lny.sectionChange('storelist')" class="btn storelist_btn">门店列表</a> -->
         </div>
     </div>
@@ -47,7 +57,7 @@
     <!-- 成功(未关注) -->
     <div class="section" id="success_not_attention">
         <div class="footer">
-            <a href="javascript:_lny.sectionChange('success_attention')" class="btn next_btn">下一步</a>
+            <a href="javascript:_lny.sectionChange('success_attention')" onclick="_hmt.push(['_trackEvent', 'click', 'btn', '下一步']);" class="btn next_btn">下一步</a>
         </div>
     </div>
 
@@ -83,6 +93,7 @@
 
 <script type="text/javascript">
     pfun.init();
+    
     var pType = (!pfun.getQueryString("type") ? "yattention" : pfun.getQueryString("type"));
 
     function lnyFun(){
@@ -100,6 +111,41 @@
         self.sectionChange = function(n){        // section 页面切换
             $(".section").removeClass("show transition");
             $("#" + n).addClass('show transition');
+        }
+
+
+        // 微信卡券
+        self.getCard = function(){
+
+            pfun.ajaxFun("POST", "/api/card", "", "json", function(data){
+                if(data.status == 1){
+                    wx.addCard({
+                        cardList: [{
+                            cardId: data.msg[0].cardId,
+                            cardExt: '{"timestamp":"'+data.msg[0].cardExt.timestamp+'","signature":"'+data.msg[0].cardExt.signature+'","openid":"'+data.msg[0].cardExt.openid+'","code":"'+data.msg[0].cardExt.code+'"}'
+                        }],
+                        success: function(res) {
+                            var cardList = res.cardList;
+                            //alert(JSON.stringfiy(res));
+                        },
+                        fail: function(res) {
+                            //alert(JSON.stringfiy(res));
+                        },
+                        complete: function(res) {
+                            //alert(JSON.stringfiy(res));
+                        },
+                        cancel: function(res) {
+                            //alert(JSON.stringfiy(res));
+                        },
+                        trigger: function(res) {
+                            //alert(JSON.stringfiy(res));
+                        }
+                    });
+                }
+
+                // console.log(data.status);
+            });
+
         }
 
     }

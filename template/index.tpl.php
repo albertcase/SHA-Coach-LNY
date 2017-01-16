@@ -31,7 +31,15 @@
 
     </style>
 
-
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?6cd44258dd7a23d93973055d942129ed";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
 
 </head>
 <body>
@@ -88,7 +96,7 @@
         <ol type="1">
             <li>参与资格: 任何中国公民均有资格参与蔻驰微信“炒‘鸡’幸运，找到你”活动（以下简称本活动）。本次活动将严格遵守中华人民共和国的相关法律及法规。参与本活动表示你同意无条件完全遵守本活动细则以及活动主办方的相关决定。</li>
             <li>活动主办方: 蔻驰贸易（上海）有限公司 南京西路1717号会德丰广场20楼，200042.</li>
-            <li>活动时间: 本活动日期由北京时间XX月XX日，活动主办方的电脑时间为本次活动的官方时间标准。</li>
+            <li>活动时间: 本活动日期由北京时间1月18日，活动主办方的电脑时间为本次活动的官方时间标准。</li>
             <li> 怎样参与本次活动:<br>
             在活动期间，所有添加蔻驰官方微信账号的用户，根据账号内指引在规定时间内完成任务，并关注Coach蔻驰官方微信，即有资格领取卡券。活动主办方有义务在活动期间保证活动功能可被正常使用。</li>
             <li>
@@ -177,7 +185,7 @@
         ]
     };
 
-    console.log(allimg);
+    // console.log(allimg);
 
     pfun.loadingFnDoing(allimg, function(){
         $(".loading").css({"visibility": "hidden"});
@@ -260,6 +268,7 @@
         if(timesObj["_ts"] == null || timesObj["_ts"] == 0){                              // 第一次进入游戏  /  分享之后得到次数
             lnyvideo.play(); 
             setTimeout(function(){
+                _hmt.push(['_trackEvent', 'play', 'video', '视频播放次数']);
                 _lny.sectionChange("video");
             }, 300);
         }else if(timesObj["_ts"] == "2"){                         //游戏失败
@@ -267,11 +276,16 @@
         }else{                                                    // 游戏完成
             location.href = "/third?type=yattention";
         };
+
+
+        _hmt.push(['_trackEvent', 'click', 'btn', '我要挑战']);
     })
 
     // 活动规则点击事件
     $(".rule").on('touchstart', function(e){
         $("#rule-pop").removeClass("hidden").addClass("ycenter transition");
+
+        _hmt.push(['_trackEvent', 'click', 'link', '活动规则']);
         e.preventDefault();
     })
 

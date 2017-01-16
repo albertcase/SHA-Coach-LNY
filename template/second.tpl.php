@@ -21,6 +21,16 @@
     <script type="text/javascript" src="/dist/asset/js/all.min.js"></script>
     <script type="text/javascript" src="http://coach.samesamechina.com/api/v1/js/9a6edd5b-c1bc-4d6a-9dd4-b03defc4ff46/wechat"></script>
 
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?6cd44258dd7a23d93973055d942129ed";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
 </head>
 <body>
 
@@ -59,6 +69,10 @@
 <script type="text/javascript" src="/dist/asset/js/public.min.js"></script>
 
 <script type="text/javascript">
+    var _cookieTimes = pfun.getCookie("times");
+    if(_cookieTimes == "1" || _cookieTimes == "2"){   // 没有游戏次数时返回禁用
+        history.go(-1);
+    }
 
     var allimg = [
         "/dist/asset/img/p2.jpg",

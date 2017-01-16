@@ -125,7 +125,7 @@ var pfun = {
                         self.setCookie("times", "0", "360");
                         location.href = "/";
                     }
-                    // _hmt.push(['_trackEvent', 'share', 'ShareAppMessage']);
+                    _hmt.push(['_trackEvent', 'share', 'ShareAppMessage']);
                     //  alert('已分享');
                 },
                 cancel: function (res) {
@@ -149,7 +149,7 @@ var pfun = {
                         self.setCookie("times", "0", "360");
                         location.href = "/";
                     }
-                    // _hmt.push(['_trackEvent', 'share', 'ShareTimeline']);
+                    _hmt.push(['_trackEvent', 'share', 'ShareTimeline']);
                     // alert('已分享');
                 },
                 cancel: function (res) {
