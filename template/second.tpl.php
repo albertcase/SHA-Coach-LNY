@@ -70,7 +70,6 @@
 
 <script type="text/javascript">
     var _cookieTimes = pfun.getCookie("times");
-    alert(_cookieTimes);
     if(_cookieTimes == 2){   // 没有游戏次数时返回禁用
         location.href = "/third?type=failure";
     }else if(_cookieTimes == 1){

@@ -306,7 +306,7 @@
 // pfun.delCookie("coachIsShare");
 // console.log(pfun.getCookie("coachIsShare") + "del");
 
-alert(timesObj["_ts"]);
+console.log(timesObj["_ts"]);
 
 
 </script>
