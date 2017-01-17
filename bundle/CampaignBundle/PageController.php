@@ -20,6 +20,13 @@ class PageController extends Controller {
 		$this->render('third');
 	}
 
+	public function cardAction() {
+		$card = 'pKCDxjpR7kxh7S9bvlILg2lDTBUY';
+		$wechatapi = new \Lib\CurioWechatAPI();
+		$list = $wechatapi->cardList($card);
+		return $this->statusPrint(1, $list);
+	}
+
 	public function clearCookieAction() {
 		setcookie('_user', json_encode($user), time(), '/');
 		$this->statusPrint('success');
