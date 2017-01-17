@@ -15,6 +15,7 @@ var gulp = require('gulp'),
     rev = require('gulp-rev');
 
 
+
 gulp.task('default',  function() {
     gulp.start('clean','minifycss', 'minifyjs');  // 要执行的任务
 });
