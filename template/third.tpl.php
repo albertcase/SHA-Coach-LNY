@@ -49,7 +49,7 @@
     <!-- 成功(已关注) -->
     <div class="section" id="success_attention">
         <div class="footer">
-            <a href="javascript:_lny.getCard();" onclick="_hmt.push(['_trackEvent', 'click', 'btn', '领取店铺红包']);" class="btn apply_btn">领取店铺红包</a>
+            <a href="javascript:_lny.getCard();" onclick="_hmt.push(['_trackEvent', 'click', 'btn', '领取红包兑换券']);" class="btn apply_btn">领取红包兑换券</a>
             <!-- <a href="javascript:_lny.sectionChange('storelist')" class="btn storelist_btn">门店列表</a> -->
         </div>
     </div>
@@ -58,7 +58,7 @@
     <div class="section" id="success_not_attention">
         <img src="/dist/asset/img/p3.jpg" height="100%" style="opacity: 0;">
         <div class="footer">
-            <a href="javascript:_lny.sectionChange('success_attention')" onclick="_hmt.push(['_trackEvent', 'click', 'btn', '下一步']);" class="btn next_btn">下一步</a>
+            <a href="javascript:_lny.sectionChange('success_attention')" onclick="_hmt.push(['_trackEvent', 'click', 'btn', '下一步']);" class="btn next_btn">领取红包兑换券</a>
         </div>
     </div>
 

@@ -524,6 +524,11 @@ a.btn:active{
     background: #666;
 }
 
+
+.btn.next_btn{
+    margin: 0 0 0 44%;
+}
+
 /* 
  * -------------
  * 公用样式 end
