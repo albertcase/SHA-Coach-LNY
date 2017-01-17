@@ -128,6 +128,7 @@
                             cardExt: '{"timestamp":"'+data.msg[0].cardExt.timestamp+'","signature":"'+data.msg[0].cardExt.signature+'","openid":"'+data.msg[0].cardExt.openid+'","code":"'+data.msg[0].cardExt.code+'"}'
                         }],
                         success: function(res) {
+                            console.log(cardList);
                             var cardList = res.cardList;
                             //alert(JSON.stringfiy(res));
                         },
@@ -350,6 +351,7 @@ $("select[name=city]").change(function(){
 })
 
 // storelistFun("Shanghai");
+
 
 
 

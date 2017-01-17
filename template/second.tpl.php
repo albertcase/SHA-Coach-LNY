@@ -59,8 +59,22 @@
 
     <!-- games -->
     <div class="section show transition" id="games">
-        <div class="gamesScenes">
-            <img src="/dist/src/img/element.png" height="100%" style="opacity: 0;">
+        <!-- Swiper -->
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="gamesScenes">
+                            <img src="/dist/src/img/element.png" height="100%" style="opacity: 0">
+                        </div>
+                    </div>
+            </div>
+            <!-- Add Arrows -->
+            <div class="swiper-button-prev">
+                <img src="/dist/src/img/arr_l.png" width="100%">
+            </div>
+            <div class="swiper-button-next">
+                <img src="/dist/src/img/arr_r.png" width="100%">
+            </div>
         </div>
     </div>
 
@@ -81,19 +95,7 @@
 <script type="text/javascript" src="/dist/asset/js/public.min.js"></script>
 
 <script type="text/javascript">
-    var _cookieTimes = pfun.getCookie("times");
-    if(_cookieTimes == 2){   // 没有游戏次数时返回禁用
-        location.href = "/third?type=failure";
-    }else if(_cookieTimes == 1){
-        if(attention){
-            location.href = "/third?type=yattention";
-        }else{
-            location.href = "/third?type=nattention";
-        }  
-    }else{
-
-    }
-
+    
     var allimg = [
         "/dist/asset/img/p2.jpg",
         "/dist/asset/img/icon-clock.png",
@@ -128,6 +130,14 @@
 
         /* 公共函数 即 默认执行 */
         self.init = function(){   // 初始化执行函数
+            var swiper = new Swiper('.swiper-container', {
+                direction: 'horizontal',
+                slidesPerView: 'auto',
+                freeMode: true,
+                nextButton: '.swiper-button-next',
+                prevButton: '.swiper-button-prev'
+            });
+
             setTimeout(function(){
                 self.countdown(); // 开始倒计时
             }, 300);
@@ -197,7 +207,7 @@
                 // }else{
                 //     self.defaultSet["ts"] = "0deg";
                 // }
-                return '<div class="animal '+ a.size +'" data-num="'+ parseInt(b+1, 10) +'" data-type="'+ self.defaultSet["ec"][b] +'" style="left: '+a.pos[0]+'%; top: '+a.pos[1]+'%;"><img src="/dist/asset/img/0'+ (a.code < 10 ? ("0" + a.code) : a.code) +'.png" height="100%"></div>'
+                return '<div class="animal '+ a.size +'" data-num="'+ parseInt(b+1, 10) +'" data-type="'+ self.defaultSet["ec"][b] +'" style="left: '+parseInt(a.pos[0]/2.05, 10)+'%; top: '+a.pos[1]+'%;"><img src="/dist/asset/img/0'+ (a.code < 10 ? ("0" + a.code) : a.code) +'.png" height="100%"></div>'
             })
 
             $(n).append(gamesCodeHTML);
@@ -214,9 +224,22 @@
     var _lny = new lnyFun();
 
     pfun.loadingFnDoing(allimg, function(){
-        $(".loading").css({"visibility": "hidden"});
-        _lny.init();
-        pfun.init();
+
+        var _cookieTimes = pfun.getCookie("times");
+        if(_cookieTimes == 2){   // 没有游戏次数时返回禁用
+            location.href = "/third?type=failure";
+        }else if(_cookieTimes == 1){
+            if(attention){
+                location.href = "/third?type=yattention";
+            }else{
+                location.href = "/third?type=nattention";
+            }  
+        }else{
+            $(".loading").css({"visibility": "hidden"});
+            _lny.init();
+            pfun.init();
+        } 
+        
     })
 
     _lny.gamesHTML(".gamesScenes"); // 填充元素

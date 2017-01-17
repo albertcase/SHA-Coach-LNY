@@ -94,7 +94,7 @@
     <div class="p-model-con" id="pop-rule">
         <strong>参与本活动无需以购买蔻驰产品或服务为前提。购买我们的产品或服务并不会增加你在本次活动中的获胜机会。本次活动最终解释权归蔻驰贸易（上海）有限公司所有。</strong><br>
         <ol type="1">
-            <li>参与资格: 任何中国公民均有资格参与蔻驰微信“炒‘鸡’幸运，找到你”活动（以下简称本活动）。本次活动将严格遵守中华人民共和国的相关法律及法规。参与本活动表示你同意无条件完全遵守本活动细则以及活动主办方的相关决定。</li>
+            <li>参与资格: 任何中国公民均有资格参与蔻驰微信“2017'酉'鸿运！”活动（以下简称本活动）。本次活动将严格遵守中华人民共和国的相关法律及法规。参与本活动表示你同意无条件完全遵守本活动细则以及活动主办方的相关决定。</li>
             <li>活动主办方: 蔻驰贸易（上海）有限公司 南京西路1717号会德丰广场20楼，200042.</li>
             <li>活动时间: 本活动日期由北京时间1月18日，活动主办方的电脑时间为本次活动的官方时间标准。</li>
             <li> 怎样参与本次活动:<br>
@@ -157,7 +157,7 @@
 
         "/dist/asset/media/poster.jpg",
         "/dist/asset/media/lny.mp4",
-    ], lnyvideo = document.getElementById("lnyvideo");
+    ];
 
     if(timesObj["_ts"] != null || timesObj["_ts"] == 0){
         allimg = [
@@ -183,7 +183,14 @@
             self.sectionChange("home"); 
             pfun.init();
             $("#dreambox").css({"visibility": "visible"});
+
+            pfun.overscroll(document.querySelector("#pop-rule"));  // 活动规则滚动条
         };
+
+        this.creatMedia = function(_id, _url, _ap, _poster){    // 创建视频
+            var video = '<video width="100%" height="100%" id="'+_id+'" preload="auto" playsinline webkit-playsinline src="'+_url+'" poster="'+_poster+'"></video>'
+            return video;
+        }
 
         // 视频事件监测
         self.eventTester = function(m, e, c){    // 视频事件监测函数
@@ -222,10 +229,11 @@
 
         /* 事件函数 */
         self.videoFun = function(){
-            //var lnyvideo = document.getElementById("lnyvideo");
+            var lnyvideo = document.getElementById("lnyvideo");
                 //lnyvideo.play(); 
-                lnyvideo.style.height = "100%";
-
+                lnyvideo
+                lnyvideo.style.height = "103%";
+                lnyvideo.style.margin = "-1% 0 0 0";
 
             self.eventTester(lnyvideo, "ended", function(){
 
@@ -250,6 +258,9 @@
 
     $(".challenge_btn").on("click", function(){
         if(timesObj["_ts"] == null || timesObj["_ts"] == 0){                              // 第一次进入游戏  /  分享之后得到次数
+            var videoHTML = _lny.creatMedia("lnyvideo", "/dist/asset/media/lny.mp4", false, "/dist/asset/media/poster.jpg");
+            $("#video").html(videoHTML);
+            var lnyvideo = document.getElementById("lnyvideo");
             lnyvideo.play(); 
             setTimeout(function(){
                 _hmt.push(['_trackEvent', 'play', 'video', '视频播放次数']);

@@ -64,6 +64,10 @@ img { pointer-events: none; }*/
     transform-style: preserve-3d;
 }
 
+#video{
+    background: rgba(0, 0, 0, 1);
+}
+
 .animal{
     /*background: rgba(27,56,67,.5);*/
     position: absolute;
@@ -173,18 +177,31 @@ img { pointer-events: none; }*/
     display: inline-block;
 }
 
-
-.section#games{
-    overflow: auto;
-}
-
-
 .gamesScenes{
     width: 100%;
     height: 100%;
     /*margin: -2% 0 0 0;*/
     position: relative;
     z-index: 1;
+}
+
+.swiper-container {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    width: auto;
+}
+
+.swiper-button-prev, .swiper-container-rtl .swiper-button-next, .swiper-button-next, .swiper-container-rtl .swiper-button-prev{
+    background: none;
+    height: 32px;
+    margin-top: -16px;
+}
+
+.swiper-button-next.swiper-button-disabled, .swiper-button-prev.swiper-button-disabled{
+    opacity: 0;
 }
 
 
