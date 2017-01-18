@@ -258,7 +258,12 @@
 
 
     $(".challenge_btn").on("click", function(){
-        if(timesObj["_ts"] == null || timesObj["_ts"] == 0){                              // 第一次进入游戏  /  分享之后得到次数
+        if(timesObj["_ts"] == null || timesObj["_ts"] == 0 || timesObj["_ts"] == "1"){                              // 第一次进入游戏  /  分享之后得到次数
+
+            if(timesObj["_ts"] == "1"){
+                pfun.setCookie("times", "0", "360");
+            };
+
             var videoHTML = _lny.creatMedia("lnyvideo", "/dist/asset/media/lny.mp4", false, "/dist/asset/media/poster.jpg");
             $("#video").html(videoHTML);
             var lnyvideo = document.getElementById("lnyvideo");
@@ -270,7 +275,7 @@
         }else if(timesObj["_ts"] == "2"){                         //游戏失败
             location.href = "/third?type=failure";
         }else{                                                    // 游戏完成
-            location.href = "/third?type=yattention";
+            // location.href = "/third?type=yattention";
         };
 
 
